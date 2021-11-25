@@ -1,0 +1,2288 @@
+ C++ problems
+1. What will be the output of:
+cout<< suit; if: char *suit[]={“Hearts”, “Diamonds”, “Clubs”, “Spades”}; ANSWER: some
+address
+2. What will be the output of:
+cout<< *(*(suit+1)); if: char *suit[]={“Hearts”, “Diamonds”, “Clubs”, “Spades”}; ANSWER: D
+3. What will be the output of :
+cout<< *(*(suit)+1); if: char *suit[]={"Hearts", "Diamonds", "Clubs", "Spades"}; OUTPUT: e
+4. What will be the output of:
+cout << *(suit+2); if: char *suit[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+ANSWER: Clubs
+5. what will be the output of :
+cout<< *suit[3]; if: char *suit[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+Answer:S
+6. what will be the output of :
+ cout<< *(*(suit+2)+2); if: char *suit[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+Answer: u
+7. What will be the output of:
+cout<< suit[3]; if: char *suit[]={“Hearts”, “Diamonds”, “Clubs”, “Spades”}; Spades
+8. What will be the output of :
+cout<< **suit; if: char *suit[]={"Hearts", "Diamonds", "Clubs", "Spades"}; OUTPUT: H
+9. What will be the output of :
+cout<< *(*(suit)+3); if: char *suit[]={"Hearts", "Diamonds", "Clubs", "Spades"}; OUTPUT: r
+10. What will be the output of:
+cout << suit[1][2]; if: char *suit[] = {"Hearts", "Diamonds", "Clubs", "Spades"}; OUTPUT: a
+11. What will be the output of :
+cout<< *suit; if: char *suit[]={"Hearts", "Diamonds", "Clubs", "Spades"}; OUTPUT: Hearts
+12.
+int s = 155;
+cout << --s << endl;
+output: 154
+13.
+int s = 4;
+cout << --s << endl;
+output: 3
+14. Are these statements equivalent?
+while (x > y){ do_smth(); }
+x > y ? do_smth() : break;
+false
+15. Your program is expected to find out if a person is suitable for military service (age from
+18 to 45 for men and from 18 to 35 for women). Please, provide a proper condition
+(variables that are used: int age that stores an age value, char gender that takes 2 possible
+values ‘M’ or ‘W’)
+if((age > 18 && age < 45 && gender == ‘M’) || (age > 18 && age < 35 && gender ==
+‘W’))
+16.
+#include <iostream>
+using namespace std;
+int main() {
+int a=3;
+double b=5.0;
+std:: cout<< sizeof(a/b);
+}
+output 8
+17. How many stars will the following code print to the console window?
+#include <iostream>
+using namespace std;
+int main() {
+for (int n=0; n<5; n++){
+ for (int n=0; m<n; m++) {
+ cout<< “*”;
+ }
+}
+}
+10 stars
+18.
+#include <iostream>
+using namespace std;
+int main() {
+int a[]={1,2,3,4,5,6,7,8,9,10};
+for (int i=0; i<10; i++){
+a[i] = a[i] * a[9-i];
+cout<< a[i] << “ ”;
+output . 10 18 24 28 30 180 196 192 162 100
+19. What is the value of the X variable at the end of the following snippet?
+int X = 1, Y = 2, Z;
+Z = X / Y * --X * Y++;
+ anwer: x=0;
+20. What is the value of p?
+#include <iostream>
+using namespace std;
+int main(){
+ int p;
+ bool a = true;
+ bool b = false;
+ int x = 10;
+ int y = 5;
+ p = ((x + y) + (a + b));
+ cout << p;
+}
+ Output: 16
+21.
+#include <iostream>
+using namespace std;
+int main() {
+int x=3;
+if (x>0) {
+while (x<5) {
+x++;
+cout<< “*”;
+}
+} else {
+cout<< “*”;
+}
+}
+How many stars will be output by executing the following code?
+Stars 2
+22.
+int fib[] = {1,2,3};
+cout << fib << endl;
+Output: address of the zero`s element
+23.
+#include <iostream>
+using namespace std;
+int main() {
+int i=8;
+while ( i>0) {
+if (i> 5) {
+ cout<< “x”;
+ i=i-2;
+}
+else {
+ cout << “Y”;
+ i=i-1;
+ }
+}
+}
+ Output : XXYYYY
+24.
+#include <iostream>
+int main() {
+int a=3;
+switch (a) {
+case 1: std:: cout<< 3 << std:: endl;
+case 2:
+case 3 :
+std:: cout << 4;
+default: std :: cout << 5 ;
+break;
+}
+}
+Output: 45
+25.
+#include <iostream>
+using namespace std;
+int main() {
+int i=0;
+do {
+ i++;
+cout<< i;
+continue;
+}
+while (i<5);
+}
+Output : 12345
+26. Initial array: 3 4 2 7 6. What is the order of elements of array after first pass of Bubble
+sort?
+Output: 3 2 4 6 7
+27.
+#include <iostream>
+using namespace std;
+int main() {
+int a=10;
+for ( int i=0; i< 10; i++)
+{ int a = 100;
+a+=i;
+}
+cout << a;
+return 0;
+}
+Output : 10
+28.
+int arr[5] = {3, 6};
+cout << arr[2] << endl;
+Output: 0;
+29. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main() {
+int i = 1, j = i + 2 * i;
+switch(j - i) {
+case 1: j++;
+case 2: j--;
+case 0: j++; break;
+default: j = 0; }
+cout<< ++j;
+return 0;
+}
+ the program outputs 4
+.
+30.
+#include <iostream>
+using namespace std;
+int main() {
+const int size= 5;
+int array[size]{1,0,1};
+for (int i = 3; i< size; i++) {
+array[i] = array[i-3] + array[i-2] + array[i-1];
+}
+for ( int i=0; i< size; i++) {
+std::cout<<array[i] << std:: endl;
+Output:
+1
+0
+1
+2
+3
+31. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i, t[4];
+ for(i = 3; i; i--) {
+t[i] = i - 1;
+t[t[i]] = t[i];
+ }
+ cout<<t[0];
+ return 0;
+ } the program outputs 0
+32. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i, s = 0, t[] = {0, 1, 2, 4, 8, 16};
+ for(i = 2; t[i] < 8; i *= 2)
+s += t[i];
+ cout<<s;
+ return 0;
+ } Output: 2
+33. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i = 2, j;
+ for(j = 0; j < 0; j -= i)
+i /= 2;
+ cout<<i + j;
+ return 0; Output: 2;
+ }
+34. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i = 1, j = i + 2 * i;
+ switch(j) {
+default: j = 0;
+case 1: j++; break;
+case 2: j--;
+case 0: j++; break;
+ }
+ cout<<++j;
+ return 0;
+ } outputs 2
+35. How many times loop "for(int i=1; i>x; i++)" is executed if x = 15 There is no correct answer
+36. How many times loop "for(int i=1; i>x; i++)" is executed if x = 15 OUTPUT: 5
+37. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ char t[] = { 'a', 'z', 'B', 'Z', '0' };
+ cout<< t[t[1] - t[0] - t[3] + t[2] + 3] - t[4];
+ return 0;
+ }
+the program outputs 0
+38. #include <iostream>
+using namespace std;
+int fun(int t) {
+return ++t;}
+int main() {
+int arr[] = { 8, 4, 2, 1 };
+cout<<fun(arr[3]) + arr[2];
+return 0;} the program outputs 4
+39. #include <iostream>
+using namespace std;
+int main() {
+int i, t[4];
+for(i = 0; i < 3; i++) {
+t[i] = i;
+t[i + 1] = 2 * t[i]; }
+cout<< t[3];
+return 0;} the program outputs 4
+40. #include <iostream>
+using namespace std;
+int main() {
+int i = 16, j = 6;
+while(j > 0) {
+i /= 2;
+j -= i / 2;}
+cout<<i + j;
+return 0;}
+Output 4
+41. What will be the output if: int x[] = {7, 5, 6}; int *ptr = x; cout << ptr[1];
+Output 5
+42. #include <iostream>
+using namespace std;
+int f(int v) {
+v = 2 * v;
+return v * v;}
+int main() {
+int i = 2;
+f(i);
+cout<<i;
+return 0;}
+Output 2
+43. #include <iostream>
+using namespace std;
+int main(){
+int a = 5;
+for (int i = 0; i < 5; i++) {
+int a = 1;
+a = a * 2; }
+cout << a << endl;
+return 0;}
+Output 5
+44. #include <iostream>
+using namespace std;
+int main() {
+int t[4][4];
+cout<<sizeof(t) / sizeof(t[0]) / sizeof(t[0][0]);
+return 0;}
+Output 1
+45. #include <iostream>
+using namespace std;
+int main() {
+int t[] = { 1, 2, 3, 4, 5 }, *p = t;
+*p++;
+(*p)++;
+*p++;
+cout<<p[-1];
+return 0;}
+Output 3
+46. #include <iostream>
+using namespace std;
+int main(){
+int i;
+const char *arr[] = {"C", "C++", "Java", "VBA"};
+const char *(*ptr)[4] = &arr;
+cout << ++(*ptr)[2];
+return 0;}
+Output ava
+#include <iostream>
+int main(){
+double y;
+y = 3/2;
+y = y == 1 ? (y = 3/2 ==1) : (y == 1.5 ? 0:1);
+std:: cout << y;
+}
+Output:1
+47. #include <iostream>
+using namespace std;
+int main() {
+int i = 0;
+if(i = 1)
+i = 2;
+else
+i = 3;
+cout<<i;
+return 0; }
+Output : 2
+48. What will be the output of:
+cout<< *arr;
+if int arr[] = {1,2,3};
+OUTPUT: 1
+49. What will be produced by executing the following part of the code?
+char name[] = {'H','e','l','l','o'};
+cout << name;
+Answer: We cannot tell clearly as we may get some garbage in the output
+50.
+#include <iostream>
+int main(){
+double y= 5;
+if ((++y)++ ==6) {
+std:: cout << y;}
+if (y == 7) {
+std:: cout << y++;}
+}
+std:: cout << --y;
+}
+Answer: 777
+51.
+while (true)
+{
+do
+{
+cout << “Hi”<< endl;
+break;
+} while (true);
+}
+infinite loop
+52. What is the output of the code?
+struct Car {
+double engineVolume;
+int productionYear;
+bool isElectric;
+};
+int main(){
+Car mercedes;
+mercedes.engineVolume = 4.5;
+mercedes.productionYear = 2002;
+mercedes.isElectric = false;
+Car* copyMercedes = &mercedes;
+copyMercedes-> engineVolume = 2.4;
+cout<< mercedes.engineVolume << endl;
+return 0;
+}
+OUTPUT: 2.4
+53.
+int s = 4;
+cout << s-- << endl;
+output: 4
+54.
+int a = 10;
+int b, c;
+c = a;
+cout<< a<< b<< c;
+return 0;
+111011
+55.
+#include <iostream>
+int main () {
+int arr[5]{};
+int arr2[5]{1, 2, 3};
+int i {0};
+for(int i =0; i<5; i++){
+arr[i++]=arr2[i--];
+}
+for(int i =0; i<5; i++){
+std:: cout<<arr[i];
+}
+}
+12300
+56. What are values of array: int x[5] = {1.2} ANSWER: 1 2 0 0 0
+57. You have array: int b[2][3]={{1,2,6},{3,4,1}} what will be the output of: cout<<b[0][0];
+Output: 1
+58. You have array: int b[2][3]={{1,2,6},{3,4,1}} what will be the output of: cout<<b[0][2];
+Output: 6
+59. You have array: int b[2][3]={{1,2,6},{3,4,1}} what will be the output of: cout<<b[1][2];
+Output: 1
+60. int x = 7, y = 2;
+bool f;
+f = x!=6 || x<y
+cout << f;
+outcome: 1
+61.
+int size = 6;
+int arr[size];
+for (int i = 0; i<size; i++){
+arr[i] = 2*i;}
+This may cause an error
+62. #include <iostream>
+using namespace std;
+int main() {
+int i = 16, j = 8;
+do {
+i /= 2;
+j -= i / 2;
+} while(j > 0);
+cout<<i + j;
+return 0;}
+OUtput: the program enters an infinite loop and does not output anything
+63. How to create mySwap function to swap two original integers
+void mySwap (int &a, int &b){
+int t=a;
+a=b;
+b=t; }
+64. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main (){
+int i=16, j=6;
+while (j>0){
+i/=2;
+j-= i/2;
+}
+cout<< i+ j;
+return 0;
+} OUTPUT: 4
+65. int x=10;
+int*ptr=&x;
+int**pptr=&ptr;
+**pptr=20;
+cout<<x<<endl ; Outputs : 20
+66. #include<iostream>
+using namespace std;
+int main(){
+int a=10;
+int *p=&a;
+*p*=10;
+cout<<*p*10;} OUTPUT: 1000
+67. INT binaryToDecimal(char* binary) {
+int sum = 0, length = strlen(binary), powerOfTwo = 1;
+for (int i = length - 1; i >= 0; i--) {
+sum += (binary[i] -'0') * powerOfTwo;
+powerOfTwo *= 2;
+}
+return sum;
+}
+68. You have a function: void print(int x=5, int z=10) {cout<<x<<” “<<y<<” ”<<z;} what is the output
+of function call: print(5,1)
+69.
+#include<iostream>
+using namespace std;
+void print(int x,int y=5, int z=10) {
+ cout<<x<<" "<<y<<" "<<z;
+}
+int main(){
+ print(5,1);
+}
+OUTPUT: 5 1 10
+70.
+bool isPrime(int n){
+for(int i=2;i*i<=n;i++){
+ if(n%i==0){
+ return false;
+ }
+}
+return true;
+}
+71.
+int x[]={7,5,6};
+int *ptr=x;
+ cout<<*(ptr+1);
+OUTPUT: 5
+72.
+#include<iostream>
+using namespace std;
+int f(int v){
+ v=2*v;
+return v*v;}
+int main(){
+int i=2;
+ f(i);
+ cout<<i;
+}
+OUTPUT: 2
+73.
+#include<iostream>
+using namespace std;
+int main(){
+ cout<<(1>2?1:2)<<('a'>'z'?'a':'z');
+}
+OUTPUT: 2z
+74. What will be the sum after executing the following part of the code?
+ #include<iostream>
+using namespace std;
+int main(){
+int twoDim[3][4]={
+ {1,2,3,4},
+ {11,22,33,44},
+ {111,222,333,444}
+};
+int sum=0;
+for(int i=0;i<3;i++){
+ sum+=twoDim[i][3-i];
+}
+ cout<<sum;
+}
+OUTPUT: 259
+75. What will be the result of *c3, after executing the following code:
+#include<iostream>
+using namespace std;
+int main(){
+char c1='a';
+char c2=c1;
+char *c3=&c2;
+char *c4,*c5;
+ c4=c3;
+ c5=&c1;
+ c2='z';
+ c3=c5;
+ cout<<*c3;
+}
+OUTPUT: ‘a’
+76. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ float x = 3.0, y = 2.0;
+ int i = 1, j = 2;
+ x = (int)x / y + (float)i / j;
+ cout<<x;
+ return 0;
+ }
+c. the program outputs 2.000000
+77. int x = 5; int *ptr = &x; What will show the following code: cout << ptr << " " << *ptr << " " <<
+&x; and if address of x is A04B88D0. b. A04B88D0 5 A04B88D0
+78. int x = 5; int *ptr = &x; What will show the following code: cout << ptr << " " << *&ptr << " "
+<< &*ptr; and if address of x is A04B88D0. b. A04B88D0 A04B88D0 A04B88D0
+79. int x = 5; int *ptr = &x; What will show the following code: cout << &ptr << " " << *ptr << " "
+<< &x; and if address of x is A04B88D0. there is no correct answer
+80. What happens if you try to compile and run this program?
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i = 1, j = i + 2 * i;
+ switch(j - i) {
+ case 1: j++;
+ case 2: j--;
+ case 0: j++; break;
+ default: j = 0;
+ }
+ cout<< ++j;
+ return 0;
+ }
+b. the program outputs 4
+81. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main() {
+int i = 16, j = 6;
+while(j > 0) {
+ i /= 2;
+ j -= i / 2;
+ }
+ cout<<i + j;
+return 0;
+}
+d. the program outputs 4
+82. What is the output of this code?
+#include <iostream>
+using namespace std;
+int main()
+{
+char a[]="c++", b[]="c++";
+if(a == b){
+ cout<<"True";
+}
+else {
+ cout<<"False";
+}
+ return 0;
+}
+OUTPUT: False
+83.
+#include <iostream>
+using namespace std;
+int main (){
+cout<<-1-1-1;
+return 0;
+}
+Answer:-3
+84.
+#include <iostream>
+using namespace std;
+int main (){
+int a=15;
+int b=6;
+cout<<((double)a/b);
+}
+Output: 2.5
+85.
+#include <iostream>
+using namespace std;
+int main (){
+for (int n=0; n<5; n++){
+ int sum=0;
+ for (int m=n; m>1; m--){
+ sum +=m;
+ }
+ cout<<sum<<" ";
+}
+}
+Output: 0 0 2 5 9
+86. What will be the output of the following code:
+int x = 99, y = 88;
+int a = (x<y)? x:y;
+int b = (x>y)? x:y;
+cout << a << b;
+Answer: 8899
+87. How many times loop “for (int i=1; i<x; i++)” is executed if x = 5
+ANSWER: 4
+88. What will be the content of twoDim after executing the following code?
+#include <iostream>
+using namespace std;
+int main(){
+int twoDim[3][3];
+int num=1;
+for (int i=0; i<3; i++){
+for (int j=0; j<3; j++){
+ twoDim[i][2-j]=num;
+ num++;
+}
+num++;
+}
+}
+OUTPUT: num=13 ?
+89. What is size of a given array: char s[]= “hello”; answer :6
+90. What are size of arrays:
+char s1[]=”bye-bye”;
+char s2[]= {‘b’, ‘y’, ‘e’, ‘b’, ‘y’, ‘e’};
+OUTPUT: s1=8, s2=7
+91. How many times “for(int i=1; i>x; i++)” is executed if changed x =15
+ANSWER: There is no correct answer
+92. What are values of array: int x[5]={0};
+OUTPUT: 0 0 0 0 0
+93. What will be the output:
+int x[] = {7, 5, 6};
+int *ptr = x;
+cout<< *(ptr + 1);
+OUTPUT: 5
+94. What output will be produced by executing the following code?
+#include <iostream>
+using namespace std;
+int main(){
+int i=0;
+do{
+ i++;
+ cout<<i;
+ continue;
+}
+while(i<5);
+}
+OUTPUT: 12345
+95. Complete the implementation body for the loop in order to get the following output:
+int main() {
+ for ( [int k = 5; k >= 0; k‑‑] ) {
+ for ( [int i = k + 2; i <= 6; i++] ){
+ [cout << "*";]
+ }
+ for ([int j = k ‑ 1; j >= 0; j‑‑]){
+ [cout << "+";]
+ }
+ cout <<"\n";
+ }
+ return 0;
+}
+OUTPUT: + + + + +
+* + + + +
+* * + + +
+* * * + +
+* * * * +
+* * * * *
+96. What output will be produced by executing the following code?
+#include <iostream>
+using namespace std;
+int main () {
+double x = 94.93;
+int y = x;
+cout<< ((double)y);
+}
+OUTPUT: 94
+97. What is the output of the following code:
+#include <iostream>
+using namespace std;
+int main () {
+int a = 10;
+int b = 20;
+if (a = b) {
+cout<< “yes”;
+}
+else if (a > b)
+{
+cout<< “no”;
+}
+OUTPUT: yes
+98. What is size of an array - int n[] = {3, 5, 6, 3, 7};
+OUTPUT: 5
+99. Which solution has the exact same output as in the given example?
+#include <iostream>
+using namespace std;
+int main () {
+int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+17};
+for(int i =0; i < 17; i++)
+{
+if(a[i] % 2==0)
+cout << a [i]<< " ";
+}
+}
+This program returns an output. Find another solution that will output the same
+OUTPUT:
+#include <iostream>
+using namespace std;
+int main () {
+int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17};
+for(int i =0; i < 17; i++)
+{
+if(a[i] % 2!=0)
+cout << a [i]<< " ";
+continue;
+}
+}
+100. What is the output of the below program?
+int a = 10;
+int b, c;
+b = a++;
+c=a;
+cout<<a<<b<<c;
+return 0;
+OUTPUT: 111011
+101. What is the output of this code?
+#include <iostream>
+using namespace std;
+int main () {
+int a {5};
+int b {3};
+if (a%b)
+std::cout<<"it is divisible"<< std::endl;
+std::cout<<"it is not divisible"<< std::endl;
+}
+OUTPUT: it is divisible it is not divisible
+102. How many stars will be output by executing the following code?
+#include <iostream>
+using namespace std;
+int main () {
+int x =3;
+if (x > 0){
+while (x<5){
+ x++;
+ cout<< "*";
+}
+} else {
+ cout<< "*";
+}
+}
+OUTPUT: 2
+103. What is the output?
+#include <iostream>
+using namespace std;
+int main () {
+int a = 10;
+for (int i=0; i< 10; i++){
+int a = 100;
+ a += i;
+}
+cout<< a;
+return 0;
+}
+OUTPUT: 10
+104. How many stars will be printed by executing the following code?
+#include <iostream>
+using namespace std;
+int main () {
+int y = 12;
+int z = 0.0;
+while(y< 10.0){
+ z += 3;
+ y += z;
+ cout<< "*";
+}
+}
+OUTPUT: 0
+105. What is the output of this code?
+#include <iostream>
+int main () {
+int arr[5] = {};
+for(int i=0; i<5; i++)
+ arr[i] = i++;
+for (int i=0; i< 5; i++)
+ std::cout<< arr[i];
+}
+OUTPUT: 00204
+106. int x=2, y = 6;
+cout << y % x << endl;
+OUTPUT: 0
+107. What is the difference between ‘=’ and ‘==’ signs?
+ANSWER: ‘=’ is assignment operator and ‘==’ is equality operator
+108. Arrays must be explicitly declared providing a _____ size
+ANSWER: constant
+109. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main() {
+int i = 16, j = 8;
+do { i /= 2;
+j -= i / 2;
+} while(j > 0);
+cout<<i + j;
+return 0;
+}
+OUTPUT: the program enters an infinite loop and does not output anything
+110. What will be the output of the following part of the code:
+int k = 10;
+switch(k%2){
+case 0: cout << " 0 ";
+case 2: cout << " 1 "; break;
+case 1: cout << " 2 ";
+}
+OUTPUT: 0 1
+111.
+Programmer wrote this code
+#include <iostream>
+int main () {
+char word[]= "hello";
+std::cin>> word;
+}
+The program prompts a user to input any string. When user entered word "New York" (7 letters)
+code worked fine, however when he entered word "program" (7 letters) the code did not run.
+Why?
+OUTPUT: Initial size of array is 5, and providing a word "program" causes stack
+around variable to be corrupted
+112. What output will be produced by executing the following code?
+#include <iostream>
+using namespace std;
+int main () {
+int a =15;
+int b = 6;
+cout<< ((double)a/b);
+}
+OUTPUT: 2.5
+113. What will cause an error from below?
+ANSWER: int a[3] = {0, 1, 2, 3};
+114. What is the output?
+#include <iostream>
+using namespace std;
+int main () {
+int a[] ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+for(int i=0; i<10; i++){
+ cout<< a[++i]<<" ";
+}
+}
+OUTPUT: 2 4 6 8 10
+115. What will be the output?
+int a = 1, b =2, c = 3;
+int ***p1, **p2, *p4;
+p1 = &p2;
+p2 = &p3;
+p3 = &a;
+p4 = &b;
+**p2 =10;
+cout<< ***p1<<" "<<**p2<<" "<<*p3;
+OUTPUT: 10 10 10
+116. What will be output
+void new_func(int*a, int b){
+*a =10;
+ b+= 20;
+}
+int main () {
+void(*func)(int*, int) = new_func;
+int a = 10;
+int b = 5;
+func(&b, a);
+cout<<a<<" "<<b;
+return 0;
+}
+OUTPUT: 10 10
+117.
+int x=10;
+int* ptr = &x;
+int** ptrToptr = &ptr;
+cout<< x<< endl;
+return 0;
+}
+At which line pointer to pointer was created?
+ANSWER: 119
+118. What will be output by executing the following code?
+int a =10;
+int b=12;
+int *pt1 =&a;
+int *p2 =14;
+cout<< *pt1;
+OUTPUT: This will cause a runtime error
+119. Suppose we execute the following code:
+char c1 = 'A';
+char c2 =c1;
+char *c3 =&c2;
+char *c4;
+char *c5;
+char **c6;
+c4 =c3;
+c5 =&c1;
+c6 =&c3;
+c2 = 'z';
+c3 = c5;
+**c6 = 'W';
+*c3 will be?
+OUTPUT: 'W'
+*c4 will be?
+OUTPUT: 'Z'
+c1 will be?
+OUTPUT: 'W'
+120. Suppose we execute this code:
+int a1 = 10;
+int a2 = a1;
+int a3 =15;
+int *a4 = &a3;
+int *a5;
+int a6;
+int **a7;
+a5 =a4;
+a6 =&a1;
+a7 =&a4;
+a2 +=5;
+a3 =0;
+a4 = a6;
+*a6 will be?
+ANSWER: 10
+a4 will be? Anwer: The address of a1
+121. What will be the output?
+int main () {
+int nn = 99;
+int dat_id = 66;
+int *dat_funny = &nn;
+whatsup(dat_id, dat_funny);
+cout<<nn<<" "<<dat_id<<" "<<*dat_funny;
+return 0;
+}
+void whatsup(int id, int *funny){
+ id= 23;
+*funny = 32;
+}
+OUTPUT: This will not compile
+122.
+What will be output by executing the following part of the code?
+double v1[3] ={1.2, 2.3, 3.4};
+double vcopy = {9.9, 9.9, 9.9};
+vcopy = v1;
+cout<< vcopy[0]<< " "<<vcopy[1]<< " "<< vcopy [2];
+ANSWER: This will not compile
+123. Suppose we execute this code:
+int a1 = 10;
+int a2 =a1;
+int a3 = 15;
+int *a4 = &a3;
+int *a5;
+int *a6;
+int **a7;
+a5 =a4;
+a6 = &a1;
+a7 = &a4;
+a2 += 5;
+a3 =0;
+a4 =a6;
+a4 will be?
+ANSWER: The address of a1
+124.
+Write output in ONE word/number
+bool f1 (int a){
+if (a>1)return true;
+else return false;
+}
+bool f2 (int a){
+if (a==0) return true;
+else return false;
+}
+bool f3 (int a){
+if (a<0)return true;
+else return false;
+}
+int main () {
+bool (*func[3])(int)={f1,f2,f3};
+int choice, num;
+cin>>choice>>num;
+cout<<(*func[choice])(num);
+return 0;
+}
+choice is 0, num is 0
+ANSWER: One =1
+125. What is the value of the X variable at the end of the following snippet?
+int X; X = 'b' - 'a' * ('\' / '\'); the snippet is invalid and will cause a compilation error
+126. What will be the value of the sum after executing the part of the code?
+int a[3] = {1,2,3};
+int b[ ] = {11,22,33};
+int sum = 0;
+for (int i = 0; i<3; i++) sum += pow(a[i],2) + b[i]; output: 80
+127.#include <iostream>
+using namespace std;
+int main() {
+float x = 3.0, y = 2.0;
+int i = 1, j = 2;
+x = (int)x / y + (float)i / j;
+cout<<x;
+return 0;} Output: 2.000000
+128. What will be the result of *c3, after executing the following code: ‘a’
+char c1 = 'a';
+char c2 =c1;
+char *c3=&c2;
+char *c4, *c5;
+c4 = c3;
+c5 =&c1;
+c2= 'z';
+c3 = c5;
+cout<<*c3;
+129. What is the value of the X variable at the end of the following snippet?
+int X = 1;
+X = X + 2 * X;
+X = X / 2 * X;
+X = X + 2 + X; Output : 8
+130. What is the value of the X variable at the end of the following snippet?
+int X = 1;
+X = X * X + 2;
+X = X / X * 2;
+X = X + 2 + X;
+Output : 6
+131. #include<iostream>
+using namespace std;
+int f(int a, int b = 3, int c = 3){
+cout<< ++a * ++b * --c ;
+return 0;}
+int main(){
+f(5, 0, 0);} OUTPUT: -6
+132. What will cause an error from below if: int y, x = 5; int *const ptr = &x; output: ptr =
+&y;
+133. What will cause an error from below if: int y, x = 5; const int *ptr = &x;
+= *ptr = 10;
+134. #include <iostream>
+using namespace std;
+int* func(int *ptr) {
+for (int i = 0; i < sizeof(ptr); i++) {
+ptr[i] *= 2;} return ptr;}
+int main() {
+int arr[] = { 1, 2, 3 ,4 };
+int *ptr = arr;
+cout << func(ptr);
+return 0; Output: address of the array
+135. #include <iostream>
+using namespace std;
+int f(int i) {
+++i;
+return i;}
+int main() {
+int i = 1;
+i = f(i);
+cout<<i;
+return 0;} OUTPUT: 2
+136. What is the value of p?
+#include <iostream>
+using namespace std;
+int main() {
+int p;
+bool a = true;
+bool b = false;
+int x = 10;
+int y = 5;
+p = ((x + y) + (a + b));
+cout << p; } OUTPUT: 16
+137. #include <iostream>
+using namespace std;
+int main() {
+int i = 1, j = 0, k;
+k = (j % i) + (i && j) + (!i || !j);
+cout<<k;
+return 0; } OUTPUT: 1
+138.
+int main () {
+int a =0;
+int b =100;
+while (a<b){
+ b =b/2-a;
+ a++;
+ cout<< "*";
+}
+}
+star 4
+139.
+Complete the implementation body for the loop in order to get following output
++ + + + +
+* + + + +
+* * + + +
+* * * + +
+* * * * +
+* * * * *
+int main () {
+for ([int k =5; k>=0; k--]){
+for ([int i = k+2 ; i<=6; i++]){
+ [cout<<"*";]
+}
+for([int j =k -1; j>=0; j--]){
+ [cout<<"+";]
+}
+ cout<<"\n";
+}
+140.
+struct Student{
+int subject1;
+int subject2;
+int subject3;
+int subject4;
+int total(){
+ return subject1 + subject2 + subject3 + subject4;
+}
+};
+int main () {
+Student Askhat;
+Askhat.subject1 = 20;
+Askhat.subject2 = 20;
+Askhat.subject3 = 25;
+Askhat.subject4 = 25;
+cout<< Askhat.total()<<endl;
+return 0;
+}
+How many bytes Askhat struct going to take in memory? 16
+141. What is size of an array - int n[] = {3, 5, 6, 3, 7}; Answer:5
+142. Which condition is true if x = 10 and y = -2 Aanswer :if(x >= 10 || y%2==1)
+143. What will be the output of the following part of the code:
+int k = 10;
+switch(k%2){
+case 0: cout << " 0 ";
+case 2: cout << " 1 "; break;
+case 1: cout << " 2 ";} Output: 0 1
+144. Which condition is true if x = 1 and y = 0 answer: if(x%2==1 || y>=1)
+145. How many times loop "for(int i=0; i<x; i*=2)" is executed if x = 100 answer: there is
+no correct answer
+146. How many times loop "for(int i=10; i>x; i-=2)" is executed if x = -1 answer: 6
+147.
+#include <iostream>
+using namespace std;
+int main () {
+char a[100];
+cin>>a;
+cout<<a;
+}
+What is the output of the following code if your input is "Good luck with your quiz!\0 Hope, it's
+easy to you ;)": good
+148.
+#include <iostream>
+int main () {
+int a =100;{
+int a =150;{
+ int a = 200;
+ std::cout<<a<<std::endl;
+}std::cout<<a<<std::endl;
+}std::cout<<a<<std::endl;
+}
+Output: 200
+150
+100
+149.
+ANSWER: There will be an error
+#include <iostream>
+using namespace std;
+main () {
+int r, x = 2;
+float y = 5;
+r = y%x;
+cout<<r;
+}
+150.
+bool f1 (int a){
+if (a>1)return true;
+else return false;
+}
+bool f2 (int a){
+if (a==0) return true;
+else return false;
+}
+bool f3 (int a){
+if (a<0)return true;
+else return false;
+}
+int main () {
+bool (*func[3])(int)={f1,f2,f3};
+int choice, num;
+cin>>choice>>num;
+cout<<(*func[choice])(num);
+return 0;
+}
+Write output in ONE word/number : choice is 3, num is 4 OUTPUT: error
+151.
+char c1 = 'A';
+char c2 =c1;
+char *c3 =&c2;
+char *c4;
+char *c5;
+char **c6;
+c4 =c3;
+c5 =&c1;
+c6 =&c3;
+c2 = 'z';
+c3 = c5;
+**c6 = 'W'; *c4 will be? ANSWER: 'Z'
+152.
+int a1 = 10;
+int a2 = a1;
+int a3 =15;
+int *a4 = &a3;
+int *a5;
+int a6;
+int **a7;
+a5 =a4;
+a6 =&a1;
+a7 =&a4;
+a2 +=5;
+a3 =0;
+a4 = a6; *a4 = 10
+153.
+double carr[]={1.2, 2.3, 3.4};
+double *pa;
+pa = carr;
+*pa = 5.5;
+*(pa+1) = *(pa+2);
+cout<< carr[0]<<" "<< carr[1]<<" "<<carr[2];
+OUTPUT: . 5.5 3.4 3.4
+154. output: 2.4
+cout<<(int)(2.0 * 6.0)/ 5.0;
+155. Match codes with correct outputs
+#include<iostream>
+using namespace std;
+int main () {
+int x[5]={1, 2, 3, 4, 5};
+for(int i=0; i<5; i++){
+if(i%3 == 2)break;
+ x[i] = i*2;
+ cout<<x[i]<<" ";
+}
+return 0;
+} OUTPUT: 0 2
+#include<iostream>
+using namespace std;
+int main () {
+int x[5]={5, 4, 3, 2, 1};
+for(int i=1; i<4; i++){
+if(i%2 == 0)continue;
+ x[i] = i;
+ cout<<x[i]<<" ";
+}
+return 0;
+} OUTPUT: 1 3
+#include<iostream>
+using namespace std;
+int main () {
+int x[5]={1, 2, 3, 4, 5};
+for(int i=0; i<5; i++){
+if(i%2 == 0)continue;
+ x[i] = i*3;
+ cout<<x[i]<<" ";
+}
+return 0;
+} OUTPUT: 3 9
+156. What will be the output of the following part of the code?
+int mat[3];
+int i, j;
+int num = 0;
+for (i = 0; i < 3; i++) {
+for (j = 2; j >= 0; j--) {
+mat[i] = j;
+}
+cout << mat[num] << " ";
+num++;
+} output: 000
+157.
+#include<iostream>
+using namespace std;
+int main () {
+int a = 1;
+for (int i = 0; i< 10; i++){
+ a *= 2;
+}
+cout<<a;
+} OUTPUT: 1024
+158.
+bool f1 (int a){
+if (a>1)return true;
+else return false;
+}
+bool f2 (int a){
+if (a==0) return true;
+else return false;
+}
+bool f3 (int a){
+if (a<0)return true;
+else return false;
+}
+int main () {
+bool (*func[3])(int)={f1,f2,f3};
+int choice, num;
+cin>>choice>>num;
+cout<<(*func[choice])(num);
+return 0;
+}
+choice is 1, num is -1
+ANSWER: 0
+159.
+int a1 = 10;
+int a2 = a1;
+int a3 =15;
+int *a4 = &a3;
+int *a5;
+int a6;
+int **a7;
+a5 =a4;
+a6 =&a1;
+a7 =&a4;
+a2 +=5;
+a3 =0;
+a4 = a6; *a5 will be?
+ OUTPUT: 0
+160.
+int a1 = 10;
+int a2 = a1;
+int a3 =15;
+int *a4 = &a3;
+int *a5;
+int a6;
+int **a7;
+a5 =a4;
+a6 =&a1;
+a7 =&a4;
+a2 +=5;
+a3 =0;
+a4 = a6; *a4 will be?
+ OUTPUT: 10
+161.
+#include<iostream>
+using namespace std;
+int main () {
+int a = 1, b =2, c = 3;
+int ***p1, **p2, *p3, *p4;
+p1 = &p2;
+p2 = &p3;
+p3 = &a;
+p4 = &b;
+*p2 = &c;
+cout<< ***p1<<" "<<**p2<<" "<<*p3;
+}
+ OUTPUT: 3 3 3
+162.
+int a1 = 10;
+int a2 = a1;
+int a3 =15;
+int *a4 = &a3;
+int *a5;
+int a6;
+int **a7;
+a5 =a4;
+a6 =&a1;
+a7 =&a4;
+a2 +=5;
+a3 =0;
+a4 = a6; **a7 will be?
+OUTPUT: 10
+163. How many times loop “for(int i=1; i<=x; i+=3)” is executed if x=15Output:5
+164. what will be the sum after executing the following part of the code?
+165. What is the output of the code?
+Struct Car{
+double engineVolume;
+int productionYear;
+bool isElectric;
+};
+int main(){
+Car mercedes;
+mercedes.engineVolume=4.5;
+mercedes.productionYear=false;
+Car* copyMercede=&mercedes;
+copy mercedes->engineVolume=2.4;
+cout<<mercedes.engineVolume<<endl;
+return 0;
+} 2.4
+166. #include <iostream>
+using namespace std;
+int fun(int *t){
+return *(++t);}
+int main(){
+int arr[]={8, 4, 2, 1};
+ cout<<fun(arr+2);
+return 0;} output: 1
+167. Suppose we have the following struct definitions are variable
+declarations in main for the below questions:
+#include <iostream>
+using namespace std;
+struct Student{
+int ID;
+int year;
+};
+struct Course{
+char dept[4];
+int number;
+int teacherID;
+Student stds[25];};
+int main() {
+Course introToProgramming:
+…
+return 0;
+What is the proper syntax for setting the year of the 10th student
+to 2? - introToProgramming.stds[9].year = 2;
+168. What happens if you try to compile and run this program? - 200
+#include <iostream>
+using namespace std;
+int main(){
+nt a=100, b=200;
+int *p=&a, *q=&b;
+p=q;
+cout<<*p;
+return 0;
+}
+169. What happens if you try to compile and run this program? - 2
+#include <iostream>
+using namespace std;
+int main(){
+int i=2, j;
+for(j=0; j<0;j-=i)
+i/=2;
+cout<<i+j;
+return 0;
+}
+170. What will be the output if: x[]={7,5,6}; *ptr=x;
+ cout<<ptr[1]; - 5
+171. #include <iostream>
+using namespace std;
+int main(){
+int i=1, j=0, k;
+k=(j%i)+(i&&j)+(!i||!j);
+cout<<k;
+return 0;
+} - output 1
+172. #include <iostream>
+using namespace std;
+int main(){
+int arr[]={4,5,6,7};
+int *p=arr;
+cout<<*arr+9;
+return 0;
+} - output 13
+173. According to rules of structure member alignment what is the most
+optimal way to create structure?
+strcut Student {
+long long int number;
+double id;
+int room;
+char grade;};
+174. #include <iostream>
+using namespace std;
+int main(){
+char a='A',*b=&a, **c=&b;
+**c=a+(a==*b);
+cout<<a;
+return 0;
+}
+output B
+175. What is the value of the X variable at the end of the following
+snippet?
+int X;
+X=’b’-’a’*(‘\’/’\’);
+output 1
+176. #include <iostream>
+using namespace std;
+void f(int i) {
+i++;
+}
+int main() {
+int i=1;
+f(i);
+cout<< i;
+return 0;
+} output: 1
+177. #include <iostream>
+char *f(char *p) {
+return p++;
+}
+char *g(char *p) {
+return p+=2;
+}
+int main() {
+char s[] = “ABCDEFGHIJ”;
+char p = *f(g(f(s+6)));
+cout<<p- ‘A’ ;
+return 0;
+} OUTPUT : 8
+178.
+#include <iostream>
+using namespace std;
+int main() {
+int a = -1; b=1;
+float i= 2.0, j = -2.0;
+cout << (a>b) +(b>a) + (i>j) + (‘z’ > ‘a’);
+return 0;
+} output : 3
+179. #include <iostream>
+using namespace std;
+int main() {
+180. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+char* func(char *ptr) {
+ for(int i = 0; i < sizeof(ptr); i++) {
+ swap(ptr[i], ptr[sizeof(ptr) - i - 1]);
+ }
+ return ptr;
+}
+int main()
+{
+ char arr[] = "hello";
+ char *ptr = arr;
+ cout << func(ptr);
+ return 0;
+} OUTPUT: a. hello
+181. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main ()
+{ cout << (2 > 1 ? 1 : 2) << ' ';
+cout << ('m' < 'm' ? 'n' : 'm') << '\n';
+return 0;
+} OUTPUT: b. 1 m
+182. what will be the output if : int x[] = {7, 5, 6}; cout<< *(x+2); output: 6;
+183. what output will be produced by executing the following code?
+#include <iostream>
+using namespace std;
+int main () {
+int i=8;
+while (i>0){
+ if (i>5) {
+ cout<<"X";
+ i=i-2;
+ }
+ else {
+ cout<<"Y";
+ i=i-1;
+ }
+}
+}
+answer: XXYYYY
+184. Fill the gaps:
+#include <iostream>
+using namespace std;
+void printArray(int a[], int n) {
+for (int i=0; i<n; i++){
+cout<< a[i] <<" ";
+}}
+void main(){
+int arr[3][2]={{1,2},{4,6}, {7,3}};
+for( int i =0; i<3; i++){
+printArray(arr[i],2);
+cout<<endl;
+}}
+185. Programmer wrote following code
+#include <iostream>
+int main () {
+char word[]="hello";
+char word2[6]={'h','e','l','l','o'};
+if (word == word2) {
+ std::cout<<"Two words are the same"<< std::endl;
+}
+else{
+ std::cout<<"Two words are different"<< std::endl;
+}
+}
+186. What is the output of this code and why?
+answer:Two words are different
+because he is comparing memory addresses where arrays are stored and not arrays. use
+strcmp() function to compare strings
+187. What are size of arrays: char s1[]=”buy-buy”; char s2[]={‘b’,’y’,’e’,’-’,’b’,’y’,’e’};
+s1= 8, s2=7
+188. What are size of arrays: char s1[]=”hi”; char s2[]={‘h,’’i’};
+s1= 3, s2=2
+189. #include <iostream>
+using namespace std;
+int main () {
+int x[] = {5, 4, -3, 15, 13, 50};
+x[3] = x[0]+x[2];
+x[5]=x[x[1]];
+x[4] = 75 + x[4];
+for (int i=0; i<6; i++) {
+cout<< x[i] << “ ”;
+}} OUTPUT: 5 4 -3 2 88 13
+190. what values are stored in the array x after running the following code?
+#include <iostream>
+using namespace std;
+int main () {
+int x[]={5,4,-3,15,13,50};
+ x[3]=x[0]+x[2];
+ x[5]=x[x[1]];
+ x[4]=75+x[4];
+for (int i=0; i<6; i++){
+ cout<<x[i]<<" ";
+}
+}
+answer: 5 4 -3 2 88 13
+191. int a = 3, b = 2;
+double c;
+c=a/b;
+cout<< c; OUTPUT:1
+192. What will be the output if: int x[]={7,5,6}; cout<<*(x+2); - 6
+193. What output will be produced by executing the following code?
+#include <iostream>
+using namespace std;
+int main() {
+int a = 25;
+double b=7;
+double c = a/b;
+cout << c; OUTPUT:3.571
+194. #include <iostream>
+using namespace std;
+int main(){
+int i=1, j=0, k;
+k=(i&&j)+(i||j)+!(i&&j)+!i+j;
+cout<<k;
+return 0;
+} output 2
+195. What will cause an error from below? -
+a.char a[]=”hello”;
+b.int x[12];
+c.There no correct answer
+d.int a[4]={1,2,3,4};
+e.char a[]={‘a’, ‘r’, ‘t’};
+196. what is the output?
+int x=4, y=20;
+ cout<<y%x<<endl;
+OUTPUT:0
+197. what will be the output of the following part of the code?
+int mat[3];
+int i,j;
+int num=0;
+for(i=0; i<3; i++){
+ for (j=2; j>=0; j--){
+ mat[i]=j;
+ }
+ cout<<mat[num]<<" ";
+ num++;
+}
+answer: 0 0 0
+198. #include <iostream>
+using namespace std;
+int main() {
+char *ptr;
+char Str[ ] = “abcdefg”;
+ptr = Str;
+ptr += 5;
+cout << ptr;
+return 0;
+} OUTPUT : fg
+199. #include <iostream>
+using namespace std;
+int main() {
+int t[4] = { 0, -1, -2, -3 }, *p=t+3;
+cout<< p[*p] - t[2];
+return 0; } output: 2;
+200. x
+201. what is the output of the following code?
+#include <iostream>
+int a;
+int main () {
+ std::cout<<a;
+}
+OUTPUT:0
+202. What will be output by executing the following code?
+char c='A';
+char *ch;
+*ch='X';
+cout<< *ch;
+answer: This will cause a runtime error
+203. what will be the output ?
+void bla(double *d){
+ *d=123.4;
+}
+int main (){
+ double x=55.5;
+ bla(x);
+ cout<<x;
+ return 0;
+}
+answer: This will not compile
+204. what will be output by executing the following part of the code?
+char xc[4]={'a','b','c','d'};
+char *xp[4];
+for(int i=0; i<4; i++){
+ xp[i]=&xc[i];
+}
+for(int i=0; i<4; i++){
+ *xp[i]=*xp[3-i];
+}
+ cout<<xc[0]<<" "<<xc[1]<<" "<<xc[2]<<" "<<xc[3];
+answer: d c c d
+205.
+#include <iostream>
+using namespace std;
+int main() {
+for (int n=0; n<5; n++) {
+int sum = 0;
+for (int m = n; m>1; m--) {
+sum += m;
+} cout << sum << “ ”;
+}} OUTPUT: 0 0 2 5 9;
+206. The programmer wrote Bubble sort code:
+#include <iostream>
+int main()
+{
+const int size=11;
+char word [size]="programmer";
+ for (int i=0;i<size-1;i++){
+ for(int j=0;j<size-1;j++){
+ if(word[j]>word[j+1]){
+ char temp=word[j];
+ word[j]=word[j+1];
+ word[j+1]=temp;
+ }
+ }
+ }
+ std::cout<<word;
+ return 0;
+}
+To sort string. What is the output of this code and why?
+It is sorted in alphabetic order.
+The code will not produce any output since Null terminator is sorted to be first.
+207. Int a=1, b=2, c=3;
+Int ***p1, **p2, *p3, *p4;
+p1=&p2;
+p2=&p3;
+p3=&a;
+p4=&b;
+p2=&p4;
+cout<<****p1<<” “<<**p2<<*p3; OUTPUT : 2 2 1
+208. Char c = ‘A’;
+Char *ch;
+*ch =’X’;
+Cout<<*ch; OUTPUT: . This will cause a runtime error
+209. #include <iostream>
+using namespace std;
+void multiplybytwo(int a) {
+a = 1;
+a *= 2;}
+int main(){
+int a = 5;
+multiplybytwo(a);
+cout << a << endl;
+return 0;} OUTPUT: 5
+210. What will be the content of twoDim after executing the following code?
+#include <iostream>
+using namespace std;
+int main(){
+int twoDim[3][3];
+int num=1;
+for (int i=0; i<3; i++){
+for (int j=0; j<3; j++){
+ twoDim[i][2-j]=num;
+ num++;
+}
+num++;
+}
+}
+Select one:
+d. 3 2 1
+7 6 5
+11 10 9
+211.
+ #include <iostream>
+ using namespace std;
+ int main() {
+ int i = 1, j = 0, k;
+ k = (i && j) + (i || j) + !(i && j) + !i + j;
+ cout<< k;
+ return 0;
+ }
+the program outputs 2
+212. #include <iostream>
+using namespace std;
+void func(int *ptr) {
+int a = *ptr;
+a += a;
+ptr = &a;}
+int main(){
+int a = 1;
+int *ptr = &a;
+func(ptr);
+cout << *ptr;
+return 0; } OUTPUT : 1
+213.
+#include <iostream>
+using namespace std;
+ void f(int i) {
+ i++;
+ }
+ int main() {
+ int i = 1;
+ f(i);
+ cout << i;
+ return 0;
+ }
+the program outputs 1
+214.
+#include <iostream>
+using namespace std;
+int main()
+{
+ int a = 10;
+ int *p = &a;
+ *p *= 10;
+ cout << *p * 10;
+ return 0;
+}
+answer: 1000
+215. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int main() {
+int i = 5, j = 4;
+for(i--; i--; i--)
+j--;
+cout<<i + j;
+return 0;
+}
+c. the program outputs 1
+216.
+217. How many times loop “for(int i=1; i>x; i++)” is executed if x = 15 There is no correct answer
+218. #include <iostream>
+using namespace std;
+int main(){
+int i, t[4];
+ for(i=0;i<3;i++){
+t[i]=i;
+t[i+1]=2*t[i];
+}
+cout<<t[3];
+return 0;
+} output 4
+219.
+#include <iostream>
+int main(){
+double y=5;
+if((++y)++ ==6){
+ std::cout<<y;
+}
+if(y==7){
+ std::cout<<y++;
+}
+std::cout<<--y;
+} output 777
+220. #include <iostream>
+using namespace std;
+int main(){
+int a=5, b=0;
+int *ptr=&b;
+for (int i=0;i<a;i++){
+b+=10;
+}
+ptr=&a;
+cout<<b+*ptr<<endl;
+return 0;
+} output 5
+221. int arr[] = { 5,6,7 }; int *a = arr; a = a + 2; cout << a[-1] <<
+endl; output 6
+222. #include <iostream>
+using namespace std;
+int f(int t[][2]) {
+return t[0][0] + t[0][1];}
+int main() {
+int i,t[2][2] = { {0,4},{4,2} };
+i = f(t);
+cout<<i;
+return 0;
+} OUTPUT : 4
+223. What happens if you try to compile and run this program?
+#include <iostream>
+using namespace std;
+int fun(int t) {
+return ++t;
+}
+int main() {
+int arr[] = { 8, 4, 2, 1 };
+cout<<fun(arr[3]) + arr[2];
+return 0;
+} the program outputs 4
+224. #include <iostream>
+using namespace std;
+int answer;
+int main() {
+for (int i=1; i<=100; i++)
+answer += (i%2);
+cout<< answer;
+return 0;
+} output: 50;
+225.
+#include <iostream>
+using namespace std;
+int main() {
+int i = 1, j = i + 2 * i;
+switch(j - i) {
+case 1: j++;
+case 2: j--;
+case 0: j++; break;
+default: j = 0;
+}
+cout<< ++j;
+return 0; }
+ANSWER: the program output 4
+226. #include <iostream>
+using namespace std;
+int main(){
+double y;
+y=3/2;
+y=y==1?(y=3/2==1):(y==1.5?0:1);
+cout<<y;
+}
+ ANSWER: the program output 1
+227. #include <iostream>
+using namespace std;
+int main() {
+char s[10] = “ABCDE”, *p = s + 3;
+cout << p[1] - p[-1];
+return 0; } Output: 2
+228.
+int s = 4;
+cout<< ++s <<endl; OUTPUT: 5
+229. int s = 4;
+ cout<< s++ <<endl; OUTPUT: 4
+230. void f() {
+}
+int main () {
+int i;
+i = f();
+cout<<i;
+return 0; } Output: compilation fails
+231. What will be the output of cout << &arr[0] << " " << &arr[2]; if: int arr[] = {1, 2, 3}; and the
+address of first element of array is AABBCC00 b. AABBCC00 AABBCC08
+232.
+#include <iostream>
+using namespace std;
+int main() {
+int a = -1, b = 1;
+float i = 2.0, j = -2.0;
+cout<< (a > b) + (b > a) + (i > j) + (j > i) + ('z' > 'a');
+return 0;
+} OUTPUT: the program outputs 3
+233. #include <iostream>
+using namespace std;
+ int main(){
+ int a=0;
+int b=100;
+while(a<b){
+ b=b/2-a;
+ a++;
+ cout<<"*";
+}
+} OUTPUT: the program outputs 4
+234. What will be the output if: int x[] = {7, 5, 6}; int *ptr = x;
+cout << *(ptr+1); - OUTPUT: the program outputs 5
+235. int x=10;
+int* ptr=&x;
+int** ptrToPtr = &ptr;
+**ptrToPtr=20;
+cout<<x<<endl;
+OUTPUT: the program outputs 20
+236. What are sizes of arrays: char s1[] = "hi"; char s2[] = {'h',
+'i'}; s1 = 3, s2 = 2
+237. #include <iostream>
+using namespace std;
+int main() {
+ double arr[] = {1.2, 2.3, 3.4};
+ double *pa;
+ pa = arr;
+ *pa = 5.5;
+ *(pa + 1) = *(pa + 2);
+ cout << arr[0] <<" "<< arr[1] <<" "<< arr[2] << endl;
+ return 0;
+} OUTPUT: the program outputs 5.5 3.4 3.4
+238. What is the output?
+cout << 22 / 5 * 3;
+OUTPUT: 12
+239. #include <iostream>
+using namespace std;
+int main() {
+int t[4] = { 0, -1, -2, -3 }, *p = t + 3;
+cout<<p[*p] - t[2];
+return 0;
+} OUTPUT: 2
+240. #include <iostream>
+using namespace std;
+int main(){
+int arr[]={4,5,6,7};
+int *p=arr;
+ cout<< *arr+9;
+return 0;
+} OUTPUT: 13
+
+///////////////
+
+C++ theory
+1) Which of the logical operator means "not equal to"? !=
+2) (Removed) A ............ is a variable that holds a ............................ as its value. pointer / memory
+address
+3) What is array? It stores a collection of elements of the same type
+4) Which of the following is not a variable type in C++? Real
+5) What is the size of double in bytes? 8 bytes
+6) Variables which are defined outside of all functions are called _____ and can be accessed from
+anywhere: global variables
+7) What is false about arrays?Array has no order of elements
+8) What is false about variable name? Can start with digits
+9) What structure works similar to switch structure? If / else (nested if/else)
+10) What is the size of float in bytes? 4 bytes
+11) What is FALSE about passing argument by reference? . arguments passed by reference can
+be literals or expressions
+12) What is return type of a function? is the type of the value returned by the function
+13) What is function body? it is a block of statements surrounded by braces { } that specify what
+the function actually does
+14) What is FALSE about memory allocation: With the dynamic memory allocation the memory is
+taken from limited stack memory
+15) What is FALSE about functions: Writing whole code in one place, without dividing
+16) Consider we defined a pointer to function: typedef int (*operation)(int, int); and how I can rewrite
+the line: int add(int x, int y, int (*funPtr)(int, int)); int add(int x, int y, operation funPtr);
+17) Choose the FALSE statement about dynamic memory allocation: Dynamically allocated memory
+is freed automatically when some block or function is exited.
+18) How operators &(address-of) and *(dereference operator) are related to each other? They are
+inverse of each other
+19) How the part of memory is called, which is given when you create variables or arrays dynamically?
+heap
+20) What is size of a given array: char s[] = "hello"; 6
+21) int x = 5; int *ptr = &x; What will show the following code: cout << ptr << " " << *ptr << " " <<
+&x; and if address of x is A04B88D0. b. A04B88D0 5 A04B88D0
+int x = 5; int *ptr = &x; What will show the following code: cout << ptr << " " << *&ptr << " " <<
+&*ptr; and if address of x is A04B88D0. b. A04B88D0 A04B88D0 A04B88D0
+ int x = 5; int *ptr = &x; What will show the following code: cout << &ptr << " " << *ptr << " " <<
+&x; and if address of x is A04B88D0. there is no correct answer
+22) What is the value of array 'str', if you read with: cin >> str; and user inputs "hello guys" Hello
+23) Which class is used to deal with output streams. ostream
+24) Which class is used to deal with input streams. istream
+25) The smallest addressable unit of memory is ..........byte
+26) What is the difference between ‘=’ and ‘==’ signs? ‘=’ is assignment operator and ‘==’ is
+equality operator
+27) A single-line comment in C++ can begin with ___ answer ://
+28) Describe std::cout. Standard output stream to computer screen usually
+29) What is the correct definition of an array? An array is a series of elements of the same type in
+contiguous memory locations
+30) What will cause an error from below?
+a. There is no correct answer
+b. int a[4] = {1, 2, 3, 4};
+c. int x[12];
+d. char a[] = {'a', 'r', 't'};
+e. char a[] = "hello";
+31) The programmer wrote Bubble sort code:
+#include <iostream>
+int main()
+{
+const int size=11;
+char word [size]="programmer";
+ for (int i=0;i<size-1;i++){
+ for(int j=0;j<size-1;j++){
+ if(word[j]>word[j+1]){
+ char temp=word[j];
+ word[j]=word[j+1];
+ word[j+1]=temp;
+ }
+ }
+ }
+ std::cout<<word;
+ return 0;
+}
+To sort string. What is the output of this code and why?
+It is sorted in alphabetic order.
+The code will not produce any output since Null terminator is sorted to be first.
+32) Programmer wrote following code
+#include <iostream>
+int main () {
+char word[]="hello";
+char word2[6]={'h','e','l','l','o'};
+if (word == word2) {
+ std::cout<<"Two words are the same"<< std::endl;
+}
+else{
+ std::cout<<"Two words are different"<< std::endl;
+}
+}
+what is the output of this code and why?
+answer:Two words are different
+because he is comparing memory addresses where arrays are stored and not arrays. use strcmp()
+function to compare strings
+33) What is the wrong way to create an array?int n = 5; int arr[n];
+34) ........... are used to hold output for a particular data consumer, such as a monitor, a file, or a printer.
+output stream
+35) What is the index number of the last element of an array with 9 elements? 8
+36) What is false about comments in programming? Used to give values for variables
+37) . What is the range of signed 1 byte? (1 byte is 8 bits) From -128 to 127
+38) Arrays must be explicitly declared providing a _____ size : constant
+39) In which structure first statements are executed and only then it checks the condition? do while
+40) How underlined part of a code is called: void printArray(inta[], intn){.....} function name
+41) Which of the following declarations is valid? int longInt;
+42) Which of the following accesses the seventh member in array? array[6];
+43) What is function name? is the identifier by which the function can be called
+44) Which class is used to deal with input streams. istream
+45) What is the correct syntax to declare a pointer? . type *pointer_name;
+46) Which data type requires the least amount of memory? bool
+47) There is no difference between below two statements:int a = 10;int a(10); true
+48) If a collection of variables is array, then a collection of arrays is two-dimensional array
+49) The following line of code is an example of what? (More than one choice could be correct) n =113;
+assignment, initialisation
+50) In order to use "strlen" which library you need to include? cstring
+51) How do you insert comments in C++ code? // This is a comment, /* This is a comment */, ////
+This is a comment
+52) Which operator can be used to COMPARE two values? ==, !=
+53) What you need to always to do after finishing working with dynamic array? Deallocate array
+(delete from memory)
+54) What is the size of char in bytes? 1
+55) What is array? it stores a collection of elements of the same type
+56) How underlined part of a code is called: int getMax(inta,intb) {..........}return type
+57) What is the size of double in bytes?8
+58) What is function overloading? multiple functions with the same name but with different
+parameter lists
+59) What operator allows us to see what memory address is assigned to a variable? &
+60) What is the correct syntax to declare a pointer? type *pointer_name
+61) How underlined part of a code is called: void printArray(inta[], intn){.....}-return type
+62) Output stream are used to hold output for a particular data consumer, such as a monitor, a file, or
+a printer
+63) What is the return type of function that doesn’t return any value void
+64) What is the size of a pointer in 32-bit system 4 bytes
+65) The smallest addressable unit of memory is byte
+66) To overload a function what conditions must be followed Functions must have different
+parameters(different types or quantity)
+67) Show right syntax of functions return_type function_name(parameters){...}
+68) What is the value of null pointer? It has no value, it is not pointing to anything/
+69) What is false about comments in programming used to give values for variables
+70) What is the size of char in bytes 1
+71) What is false about variable ? Can store many values
+72) Choose the correct syntax for creating variable dynamically int *a ??????????????????
+73) What does the “continue” do inside of a loop? Skips the remainder of loop body and starts the
+next iteration
+74) What is the size of an array - int n[]={3, 5, 6, 3, 7}; 5
+75) A null terminator is a special character (‘\0’, ascii code 0) used to indicate the end of the string
+76) What is algorithm? Actions and their order
+77) What is FALSE about passing argument by value? allows to change the value of passed variable
+78) What statement is FALSE about pointers to function? You can not assign another address to
+function pointers
+79) What is definition of loops? Statements executed while some condition is true
+80) What does the following statement mean? int(*fp)(char*) pointer to function taking a char*
+argument and returns an int
+81) How to create a pointer to pointer? int**ptr;
+82) Which of the following strings is an invalid variable name? 2R2D
+83) Which condition is true if x=1 and y=0; if(x%2==1 || y>=1)
+84) What is NOT an advantage of using functions? high speed of execution (not sure)
+85) How underlined part of a code is called: int getMax(int a,int b) {..........} parameter
+86) A variable is ......................., when pointer is ...................... direct reference / indirect reference
+87) A ............ is a variable that holds a ............................ as its value. = pointer / memory address
+88) The lowest programming language from below. Machine language
+89) What is the size of integer in bytes? 4 bytes
+90) In which namespace operators cin and cout located std
+91) What is false about comments in programming? Used to give values for variables
+92) ............... are used to hold input from a data producer, such as a keyboard, a file, or a network. e.
+input stream
+93) What library you should include to use cin and cout? c. iostream
+94) Which of the following strings is a correct floating-point number (in the "C" language sense)? c.
+3.1415E92
+95) If 'x' is a variable name, how to assign its address to a pointer 'ptr'? a. ptr = &x;
+96) You have array: int b[2][3] = {{1,2,6}, {3,4,1}} what will be the output of: cout << b[0][0];
+e. 1
+97) What operator allows us to get the value at a particular address? *
+98) Each statement or expression is ended with… Semicolon
+99) Choose the correct syntax for creating array dynamically: int *a = new int [n];
+100) What does the “break” do inside of a loop? stops the loop and exits from it
+101) What is the definition of function?
+A function is a reusable sequence of statements designed to do a particular job
+102) Consider you have function: int plusOne(int x){return x+1}; and *ptr is pointer to your function
+using pointer: ptr(5)
+103) What is true about float and double? float has 6-9 digits and double has 15-18 digits of precision
+104) Describe std::cin Standard input stream from keyboard usually
+105) What does the "continue" do inside of a loop? Skips the remainder of loop body and starts the
+next iteration
+106) ........... are used to hold output for a particular data consumer, such as a monitor, a file, or a printer.
+output stream
+107) What will be produced by executing the following part of the code?char name[] = {'H','e','l','l','o'};
+cout << name; We cannot tell clearly as we may get some garbage in the output
+108) Show the correct syntax of declaring a pointer to the function that has no parameters and returns
+real number: a. double (*funPtr)();
+109) What is the value of array ‘str’, if you read with: cin>>str; and user inputs “hello guys” -
+hello
+110) What is a program(application)
+It is a set of instructions that tells the computer what to do
+111) How in C++ logical OR is written ? ||
+112) How in C++ logical NOT is written? !
+113) what program takes the WHOLE source code and converts it to machine code?
+compiler
+114) Function that returns the length of array: strlen)
+115) A single-line comment in C++ can begin with ___ //
+116) What expression is TRUE if ‘arr’ is an array name? *arr=&arr[0]/ arr=&arr[0]/ &arr=*arr
+117) Which of the following is illegal : int i; double* dp = &i;
+118) A ................. is an expression that tells the CPU to interrupt the current function and execute
+another one - function call
+119) What is the size of short in bytes? 2 bytes
+120) Which condition is true if x = 10 and y = -2 if(x>=10 || y%2==1)
+121) All variables must be declared before the can be used
+122) Values of type char are used to hold values defined by the ASCII character set
+123) What is the size of a pointer in 32-bit system? - 4 bytes
+124) How many times loop "for(int i=0; i < x; i *= 2)" is executed if x = 100 initially There is no
+correct answer
+125) . If "stp" is a pointer to array of objects of Student class, then which one is WRONG way to
+access to Student's members? (stp+i).id
+126) What is the correct syntax to declare a pointer? type *pointer_name;
+127) What operator you use to allocate memory dynamically? new
+128) What will cause an error from below? = int a[];
+129) Which condition is true if x = 1 and y = 0 if(x%2==1 || y>=1)
+130) What is FALSE from below?. Variables declared outside of a function are local variables
+131) How underlined part of a code is called: int getMax(int a, int b){if(a>b) return a; else return b;}
+returning value
+132) A(n) variable is a named location in memory that is used to hold a value that may be modified
+by the program
+133) Choose the high level programming language from below: C++
+134) What is parameter of a function : allows passing arguments to the function from the location
+where it is called.
+135) Which of the following operators can be used only with integer operands %
+136) How underlined part of a code is called: int getMax(inta, intb){......} Function name
+137)
+138) What will cause an error from below?
+A. There is no correct answer
+B. int a[5] = {13, 32, 43, 54, 25};
+C. int a[] = {14, 2, 36, 32, 43};
+D. int a[3] = {0, 1, 2, 3};
+E. int a[2];
+139) Which of the following is illegal? int i; double* dp = &i;
+140) Which of the following operators can be used only with integer operands? %
+141) What is the range of unsigned 1 byte? (1 byte is 8 bits) From 0 to 255
+142) There is no difference between below two statements: int a = 10; int a(10); True
