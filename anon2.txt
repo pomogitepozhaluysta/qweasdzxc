@@ -1,0 +1,188 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+void sortArr(int **arr, int n, int m){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			for(int k=0; k<n; k++){
+				for(int l=0; l<m; l++){
+					if(arr[i][k]<arr[j][l]){
+						int temp=arr[i][k];
+						arr[i][k]=arr[j][l];
+						arr[j][l]=temp;
+					}
+				}
+			}
+		}
+	}
+}
+int main(){
+	int n, m;
+	cin>>n>>m;
+	int **arr =new int* [n];
+	for(int i=0; i<n; i++){
+		arr[i]=new int[m];
+	}
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cin>>arr[i][j];
+		}
+	}
+	sortArr(arr, n, m);
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			cout<<arr[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	for(int i=0; i<n; i++){
+		delete arr[i];
+		arr[i]=0;
+	}
+	
+	delete []arr;
+	arr=0;
+	return 0;
+}
+
+
+////////////////////////////////////////////////
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+struct Train{
+    int id;
+    char* dest;
+    char* time;
+};
+void convertToUpper(char* arr){
+    for(int i=0; i<strlen(arr); i++){
+        if(islower(arr[i])){
+            arr[i]=toupper(arr[i]);
+        }
+    }
+}
+int main() {
+    int n;
+    cin>>n;
+    Train *tr = new Train[n];
+    for(int i=0; i<n; i++){
+        tr[i].dest = new char[30];
+        tr[i].time = new char[6];
+        cin>>tr[i].id>>tr[i].dest>>tr[i].time;
+        convertToUpper(tr[i].dest);
+    }
+    char key[30];
+    cin>>key;
+    convertToUpper(key);
+    int destID=-1;
+    for(int i=0; i<n; i++){
+        if(strcmp(tr[i].dest, key) == 0)//strcmp return 0 when it is equal
+        {
+            destID=i;
+        }
+    }
+    if(destID==-1){
+        cout<<"Impossible";
+    }
+    else{
+        cout<<tr[destID].id<<"_"<<tr[destID].dest<<"_"<<tr[destID].time;
+    }
+    for(int i=0; i<n; i++){
+        delete tr[i].dest;
+        tr[i].dest = 0;
+        delete tr[i].time;
+        tr[i].time = 0;
+    }
+    delete[] tr;
+    tr=0;
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+    struct Products{
+        int ID;
+        string name;
+        double price;
+    }; 
+    
+    struct Pricelist{
+        int ID;
+        char *Firm;
+        char *date;
+        int number;
+        Products *items;
+    };
+
+void sortProducts(Pricelist *pricelist, int indexFirm[], int indexProducts[], int count){
+    for(int i = 0; i < count; i++){
+      for(int j = 0; j < i+1; j++){
+        if(pricelist[indexFirm[i]].items[indexProducts[i]].price > pricelist[indexFirm[j]].items[indexProducts[j]].price){
+          int temp = indexFirm[i];
+          indexFirm[i] = indexFirm[j];
+          indexFirm[j] = temp;
+        }
+      }
+    }
+}
+
+void searchProduct(string product, int range1, int range2, int n, Pricelist *pricelist){
+  int indexFirm[100];
+  int indexProducts[100];
+  int count = 0;
+    for(int i = 0; i < n; i++){
+      for(int j = 0; j < pricelist[i].number; j++){
+        if((pricelist[i].items[j].name == product)&&(pricelist[i].items[j].price >= range1 && pricelist[i].items[j].price <= range2)){
+          indexFirm[count] = i;
+          indexProducts[count] = j;
+          count++;
+        }
+      }
+    }
+    
+    sortProducts(pricelist, indexFirm, indexProducts, count);
+      for(int i = 0; i < count; i++){
+        cout << pricelist[indexFirm[i]].ID << " " << pricelist[indexFirm[i]].Firm << " " << pricelist[indexFirm[i]].date << endl;
+      }
+}
+
+int main()
+{
+  int n;
+  cin >> n;
+  Pricelist *pricelist = new Pricelist[n];
+    for(int i = 0; i < n; i++){
+      pricelist[i].Firm = new char[40];
+      pricelist[i].date = new char[10];
+      cin >> pricelist[i].ID >> pricelist[i].Firm >> pricelist[i].date >> pricelist[i].number;
+      pricelist[i].items = new Products[pricelist[i].number];
+        for(int j = 0; j < pricelist[i].number; j++){
+          cin >> pricelist[i].items[j].ID >> pricelist[i].items[j].name >> pricelist[i].items[j].price;
+        }
+    }
+
+  string product;
+  int range1;
+  int range2;
+  cin >> product >> range1 >> range2;
+    searchProduct(product, range1, range2, n, pricelist);
+
+    for(int i = 0; i < n; i++){
+      delete pricelist[i].Firm;
+      pricelist[i].Firm = 0;
+      delete pricelist[i].date;
+      pricelist[i].date = 0;
+    }
+  delete[] pricelist;
+  pricelist = 0;  
+
+  return 0;
+}
+
